@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.scss'
+import './components/gui/gui.scss'
+import ModelProvider from './components/ModelProvider'
+import ShaderCanvas from './components/ShaderCanvas'
+import MyGUI from './components/MyGUI'
+import Modal from './components/Modal';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ModelProvider>
+        <ShaderCanvas />
+        <Modal />
+        <MyGUI />
+      </ModelProvider>
     </div>
-  );
+  )
 }
-
-export default App;
